@@ -1,3 +1,4 @@
+console.log('Hello World!!!');
 /*****************************
 * Variables and data types
 */
@@ -20,9 +21,8 @@ console.log(job);
 // Variable naming rules
 var _3years = 3;
 var johnMark = 'John and MArk';
-var if = 23;
+// var if = 23; //not working
 */
-
 
 
 /*****************************
@@ -33,7 +33,7 @@ var firstName = 'John';
 var age = 28;
 
 // Type coercion
-console.log(firstName + ' ' + age);
+console.log(firstName + ' ' + age); //number was forced to be converted to string
 
 var job, isMarried;
 job = 'teacher';
@@ -150,6 +150,12 @@ console.log(BMIMark, BMIJohn);
 
 var markHigherBMI = BMIMark > BMIJohn;
 console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI);
+
+if (BMIMark > BMIJohn) {
+    console.log('Mark\'s BMI is higher than John\'s.');
+} else {
+    console.log('John\'s BMI is higher than Marks\'s.');
+}
 */
 
 
@@ -174,21 +180,6 @@ if (isMarried) {
 } else {
     console.log(firstName + ' will hopefully marry soon :)');
 }
-
-var massMark = 78; // kg
-var heightMark = 1.69; // meters
-
-var massJohn = 92;
-var heightJohn = 1.95;
-
-var BMIMark = massMark / (heightMark * heightMark);
-var BMIJohn = massJohn / (heightJohn * heightJohn);
-
-if (BMIMark > BMIJohn) {
-    console.log('Mark\'s BMI is higher than John\'s.');
-} else {
-    console.log('John\'s BMI is higher than Marks\'s.');
-}
 */
 
 
@@ -196,7 +187,7 @@ if (BMIMark > BMIJohn) {
 /*****************************
 * Boolean logic
 */
-/*
+
 var firstName = 'John';
 var age = 20;
 
@@ -206,31 +197,33 @@ if (age < 13) {
     console.log(firstName + ' is a teenager.');
 } else if (age >= 20 && age < 30) {
     console.log(firstName + ' is a young man.');
+} else if (age === 30) {
+    console.log(firstName + ' is sweet 30!!!.');
 } else {
     console.log(firstName + ' is a man.');
 }
-*/
+
 
 
 
 /*****************************
 * The Ternary Operator and Switch Statements
 */
-/*
+
 var firstName = 'John';
 var age = 14;
 
 // Ternary operator
 age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
 
-var drink = age >= 18 ? 'beer' : 'juice';
+var drink = age >= 18 ? 'beer' : 'juice'; // Either beer(true) or juice(false)
 console.log(drink);
 
-(if (age >= 18) {
-    var drink = 'beer';
-} else {
-    var drink = 'juice';
-}
+// if (age >= 18) {
+//     var drink = 'beer';
+// } else {
+//     var drink = 'juice';
+// }
 
 // Switch statement
 var job = 'instructor';
@@ -238,39 +231,39 @@ switch (job) {
     case 'teacher':
     case 'instructor':
         console.log(firstName + ' teaches kids how to code.');
-        break;
+        break; //need break to stop evaluating the next cases
     case 'driver':
         console.log(firstName + ' drives an uber in Lisbon.');
         break;
     case 'designer':
         console.log(firstName + ' designs beautiful websites.');
         break;
-    default:
+    default: //Default option
         console.log(firstName + ' does something else.');
 }
 
-age = 56;
-switch (true) {
-    case age < 13:
-        console.log(firstName + ' is a boy.');
-        break;
-    case age >= 13 && age < 20:
-        console.log(firstName + ' is a teenager.');
-        break;
-    case age >= 20 && age < 30:
-        console.log(firstName + ' is a young man.');
-        break;
-    default:
-        console.log(firstName + ' is a man.');
-}
-*/
+// age = 56;
+// switch (true) {
+//     case age < 13:
+//         console.log(firstName + ' is a boy.');
+//         break;
+//     case age >= 13 && age < 20:
+//         console.log(firstName + ' is a teenager.');
+//         break;
+//     case age >= 20 && age < 30:
+//         console.log(firstName + ' is a young man.');
+//         break;
+//     default:
+//         console.log(firstName + ' is a man.');
+// }
+console.log(' ')
 
 
 
 /*****************************
 * Truthy and Falsy values and equality operators
 */
-/*
+
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
 
@@ -278,17 +271,17 @@ var height;
 
 height = 23;
 
-if (height || height === 0) {
+if (height || height === 0) { //because we want 0 to be considered as defined
     console.log('Variable is defined');
 } else {
     console.log('Variable has NOT been defined');
 }
 
 // Equality operators
-if (height === '23') {
+// if (height === '23') { //this is going to be fault (strict)!
+if (height == '23') { //this forces type coercion and therefore it will be True!!!
     console.log('The == operator does type coercion!');
 }
-*/
 
 
 
