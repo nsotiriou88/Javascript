@@ -45,7 +45,7 @@ console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? 
 age = 'twenty eight';
 job = 'driver';
 
-alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+alert(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried); //NOTE alert display
 
 var lastName = prompt('What is his last Name?');
 console.log(firstName + ' ' + lastName);
@@ -313,15 +313,6 @@ if (scoreJohn > scoreMike && scoreJohn > scoreMary) {
     console.log('Mike\'s team wins with ' + scoreMike + ' points');
 } else if (scoreMary > scoreJohn && scoreMary > scoreMike) {
     console.log('Mary\'s team wins with ' + scoreMary + ' points');
-} else {
-    console.log('There is a draw');
-}
-
-
-if (scoreJohn > scoreMike) {
-    console.log('John\'s team wins with ' + scoreJohn + ' points');
-} else if (scoreMike > scoreJohn) {
-    console.log('Mike\'s team wins with ' + scoreMike + ' points');
 } else {
     console.log('There is a draw');
 }
