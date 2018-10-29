@@ -231,7 +231,7 @@ switch (job) {
     case 'teacher':
     case 'instructor':
         console.log(firstName + ' teaches kids how to code.');
-        break; //need break to stop evaluating the next cases
+        break; //need break to stop evaluating the next cases <---------
     case 'driver':
         console.log(firstName + ' drives an uber in Lisbon.');
         break;
@@ -271,7 +271,7 @@ var height;
 
 height = 23;
 
-if (height || height === 0) { //because we want 0 to be considered as defined
+if (height || height === 0) { //because we want 0 to be considered as defined; '==' will be true for nil, false etc.
     console.log('Variable is defined');
 } else {
     console.log('Variable has NOT been defined');
@@ -352,19 +352,18 @@ yearsUntilRetirement(1969, 'Jane');
 */
 
 
-
 /*****************************
 * Function Statements and Expressions
 */
-/*
-// Function declaration
-// function whatDoYouDo(job, firstName) {}
 
-// Function expression
+// Function declaration ----------
+// function whatDoYouDo(job, firstName) {..}
+
+// Function expression -----------
 var whatDoYouDo = function(job, firstName) {
     switch(job) {
         case 'teacher':
-            return firstName + ' teaches kids how to code';
+            return firstName + ' teaches kids how to code'; //<------- no need for break here; return is terminating function and case too.
         case 'driver':
             return firstName + ' drives a cab in Lisbon.'
         case 'designer':
@@ -377,14 +376,13 @@ var whatDoYouDo = function(job, firstName) {
 console.log(whatDoYouDo('teacher', 'John'));
 console.log(whatDoYouDo('designer', 'Jane'));
 console.log(whatDoYouDo('retired', 'Mark'));
-*/
 
 
 
 /*****************************
 * Arrays
 */
-/*
+
 // Initialize new array
 var names = ['John', 'Mark', 'Jane'];
 var years = new Array(1990, 1969, 1948);
@@ -394,26 +392,28 @@ console.log(names.length);
 
 // Mutate array data
 names[1] = 'Ben';
-names[names.length] = 'Mary';
+names[names.length] = 'Mary'; //Good technique to append new element
 console.log(names);
 
 // Different data types
 var john = ['John', 'Smith', 1990, 'designer', false];
-
-john.push('blue');
-john.unshift('Mr.');
 console.log(john);
 
+john.push('blue'); //append in the end
+john.unshift('Mr.'); //append at the start
+console.log(john);
+
+john.pop(); //removes last element
 john.pop();
-john.pop();
-john.shift();
+john.shift(); //removes the first element
 console.log(john);
 
 console.log(john.indexOf(23));
+console.log(john.indexOf('designer'));
 
 var isDesigner = john.indexOf('designer') === -1 ? 'John is NOT a designer' : 'John IS a designer';
 console.log(isDesigner);
-*/
+
 
 
 
@@ -475,8 +475,9 @@ var john = {
     isMarried: false
 };
 
+console.log(john);
 console.log(john.firstName);
-console.log(john['lastName']);
+console.log(john['lastName']); //both ways work
 var x = 'birthYear';
 console.log(john[x]);
 
@@ -493,11 +494,10 @@ console.log(jane);
 */
 
 
-
 /*****************************
 * Objects and methods
 */
-/*
+
 var john = {
     firstName: 'John',
     lastName: 'Smith',
@@ -506,13 +506,12 @@ var john = {
     job: 'teacher',
     isMarried: false,
     calcAge: function() {
-        this.age = 2018 - this.birthYear;
+        this.age = 2018 - this.birthYear; //special word for accessing the object's other values; age is being created.
     }
 };
 
 john.calcAge();
 console.log(john);
-*/
 
 
 
