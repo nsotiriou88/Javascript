@@ -497,7 +497,7 @@ console.log(jane);
 /*****************************
 * Objects and methods
 */
-
+/*
 var john = {
     firstName: 'John',
     lastName: 'Smith',
@@ -512,7 +512,7 @@ var john = {
 
 john.calcAge();
 console.log(john);
-
+*/
 
 
 /*****************************
@@ -529,14 +529,14 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 
 GOOD LUCK 😀
 */
-/*
+
 var john = {
     fullName: 'John Smith',
     mass: 110,
     height: 1.95,
     calcBMI: function() {
         this.bmi = this.mass / (this.height * this.height);
-        return this.bmi;
+        return this.bmi; //this is very important to be returned at the end, if we want to access it with the method emmediately.
     }
 }
 
@@ -552,12 +552,11 @@ var mark = {
 
 if (john.calcBMI() > mark.calcBMI()) {
     console.log(john.fullName + ' has a higher BMI of ' + john.bmi);
-} else if (mark.bmi > john.bmi) {
+} else if (mark.bmi > john.bmi) { //bmi is already calculated.
     console.log(mark.fullName + ' has a higher BMI of ' + mark.bmi);
 } else {
     console.log('They have the same BMI');
 }
-*/
 
 
 
@@ -565,21 +564,13 @@ if (john.calcBMI() > mark.calcBMI()) {
 * Loops and iteration
 */
 
-/*
 // for loop
-for (var i = 1; i <= 20; i += 2) {
+for (var i = 1; i <= 20; i += 5) {
     console.log(i);
 }
 
-// i = 0, 0 < 10 true, log i to console, i++
-// i = 1, 1 < 10 true, log i to the console, i++
-//...
-// i = 9, 9 < 10 true, log i to the console, i++
-// i = 10, 10 < 10 FALSE, exit the loop!
-
-
 var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
-for (var i = 0; i < john.length; i++) {
+for (var i = 0; i < john.length; i++) { //Safer to use the length of the array.
     console.log(john[i]);
 }
 
@@ -595,12 +586,12 @@ while(i < john.length) {
 var john = ['John', 'Smith', 1990, 'designer', false, 'blue'];
 
 for (var i = 0; i < john.length; i++) {
-    if (typeof john[i] !== 'string') continue;
+    if (typeof john[i] !== 'string') continue; //'!==' strict 'different' and '!=' 'normal' different operators.
     console.log(john[i]);
 }
 
 for (var i = 0; i < john.length; i++) {
-    if (typeof john[i] !== 'string') break;
+    if (typeof john[i] !== 'string') break; //simple commands can be included in just one line after statement.
     console.log(john[i]);
 }
 
@@ -608,7 +599,6 @@ for (var i = 0; i < john.length; i++) {
 for (var i = john.length - 1; i >= 0; i--) {
     console.log(john[i]);
 }
-*/
 
 
 
@@ -640,7 +630,6 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 GOOD LUCK 😀
 */
 
-/*
 var john = {
     fullName: 'John Smith',
     bills: [124, 48, 268, 180, 42],
@@ -716,4 +705,3 @@ if (john.average > mark.average) {
 } else if (mark.average > john.average) {
     console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + mark.average);
 }
-*/
