@@ -8,7 +8,7 @@ function calculateAge(year) {
     console.log(2016 - year);
 }
 
-// retirement(1956);
+// retirement(1956); //<---- not going to work because it is not function declaration, but it is function expression.
 var retirement = function(year) {
     console.log(65 - (2016 - year));
 }
@@ -16,23 +16,22 @@ var retirement = function(year) {
 
 // variables
 
-console.log(age);
+console.log(age); //if we console.log without defining after the age variable, it will not work. In this case it will print imdefined.
 var age = 23;
 
 function foo() {
-    console.log(age);
-    var age = 65;
+    console.log(age); // if we do not define 'age' here, the first log will print '23', otherwise it will 'hoist' the variable, and it will print undefined fist.
+    var age = 65; // this makes age a local variable, even if this name exists in the global scope!!! <---------
     console.log(age);
 }
 foo();
-console.log(age);
+console.log(age); // it will print the global context value of 'age', 23 and not 65.
 
 
 
 /////////////////////////////////////
 // Lecture: Scoping
 
-/*
 // First scoping example
 var a = 'Hello!';
 first();
@@ -67,7 +66,6 @@ function third() {
     //console.log(c);
     console.log(a+d);
 }
-*/
 
 
 
