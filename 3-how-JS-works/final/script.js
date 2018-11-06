@@ -29,22 +29,22 @@ console.log(age); // it will print the global context value of 'age', 23 and not
 
 
 
-/////////////////////////////////////
-// Lecture: Scoping
+// /////////////////////////////////////
+// // Lecture: Scoping
 
-// First scoping example
-var a = 'Hello!';
-first();
+// // First scoping example
+// var a = 'Hello!';
+// first();
 
-function first() {
-    var b = 'Hi!';
-    second();
+// function first() {
+//     var b = 'Hi!';
+//     second();
 
-    function second() {
-        var c = 'Hey!';
-        console.log(a + b + c);
-    }
-}
+//     function second() {
+//         var c = 'Hey!';
+//         console.log(a + b + c);
+//     }
+// }
 
 
 // Example to show the differece between execution stack and scope chain
@@ -63,7 +63,7 @@ function first() {
 
 function third() {
     var d = 'John';
-    //console.log(c);
+    //console.log(c); //cannot be accessed since the third function is not defined in scope, although it is called in that block before!
     console.log(a+d);
 }
 
@@ -72,25 +72,24 @@ function third() {
 /////////////////////////////////////
 // Lecture: The this keyword
 
-/*
-//console.log(this);
+// console.log(this);
 
-calculateAge(1985);
+// calculateAge(1985);
 
-function calculateAge(year) {
-    console.log(2016 - year);
-    console.log(this);
-}
+// function calculateAge(year) {
+//     console.log(2016 - year);
+//     console.log(this); //this is normal function and 'this' will call the window object.
+// }
 
 var john = {
     name: 'John',
     yearOfBirth: 1990,
     calculateAge: function() {
-        console.log(this);
+        console.log(this); //'this' calls the function object this time.
         console.log(2016 - this.yearOfBirth);
         
         function innerFunction() {
-            console.log(this);
+            console.log(this); //'this' is again the window object and not the John object; regular function called inside a method.
         }
         innerFunction();
     }
@@ -104,6 +103,5 @@ var mike = {
 };
 
 
-mike.calculateAge = john.calculateAge;
-mike.calculateAge();
-*/
+mike.calculateAge = john.calculateAge; //assigning the same method to 'mike' object.
+mike.calculateAge(); //calls 'Mike' object; 'this' takes value once it is called.
