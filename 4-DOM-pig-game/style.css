@@ -16,6 +16,7 @@
     text-transform: uppercase;
 }
 
+/* this is for the additional Text box; no focus when selected */
 .final-score:focus { outline: none; }
 
 #dice-1 { top: 120px; }

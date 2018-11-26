@@ -35,6 +35,7 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
             nextPlayer();
         }
         
+        // This is for losing everythin if rolling two times 6!
         /*
         if (dice === 6 && lastDice === 6) {
             //Player looses score
@@ -68,7 +69,7 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
         
         // Undefined, 0, null or "" are COERCED to false
         // Anything else is COERCED to true
-        if(input) {
+        if(input) {  // Maybe also check if we input text insted of number
             winningScore = input;
         } else {
             winningScore = 100;

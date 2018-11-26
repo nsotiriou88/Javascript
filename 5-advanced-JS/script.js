@@ -1,11 +1,11 @@
 /////////////////////////////
 // Lecture: Function constructor
-/*
-var john = {
-    name: 'John',
-    yearOfBirth: 1990,
-    job: 'teacher'
-};
+
+// var john = {
+//     name: 'John',
+//     yearOfBirth: 1990,
+//     job: 'teacher'
+// };
 
 var Person = function(name, yearOfBirth, job) {
     this.name = name;
@@ -13,6 +13,7 @@ var Person = function(name, yearOfBirth, job) {
     this.job = job;
 }
 
+// Inheritance in practice; prototype is an object's property
 Person.prototype.calculateAge  = function() {
     console.log(2016 - this.yearOfBirth);
 };
@@ -30,7 +31,6 @@ mark.calculateAge();
 console.log(john.lastName);
 console.log(jane.lastName);
 console.log(mark.lastName);
-*/
 
 
 
