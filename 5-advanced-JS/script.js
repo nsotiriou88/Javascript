@@ -1,5 +1,6 @@
 /////////////////////////////
 // Lecture: Function constructor
+console.log('\nFunction constructor')
 
 // var john = {
 //     name: 'John',
@@ -7,6 +8,7 @@
 //     job: 'teacher'
 // };
 
+// Always capital when it is a function constructor(object-like)
 var Person = function(name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -33,34 +35,35 @@ console.log(jane.lastName);
 console.log(mark.lastName);
 
 
-
 /////////////////////////////
 // Lecture: Object.create
-/*
+console.log('\nObject.create')
+
+// Different way to create it
 var personProto = {
     calculateAge: function() {
         console.log(2016 - this.yearOfBirth);
     }
 };
 
-var john = Object.create(personProto);
+var john = Object.create(personProto); //Adds in object's proto
 john.name = 'John';
 john.yearOfBirth = 1990;
 john.job = 'teacher';
 
+// Better way by filling the info in the second argument
 var jane = Object.create(personProto, {
     name: { value: 'Jane' },
     yearOfBirth: { value: 1969 },
     job: { value: 'designer' }
 });
-*/
-
 
 
 /////////////////////////////
 // Lecture: Primitives vs objects
-/*
-// Primitives
+console.log('\nPrimitives vs objects')
+
+// Primitives ==> variables contain the actual value
 var a = 23;
 var b = a;
 a = 46;
@@ -69,7 +72,7 @@ console.log(b);
 
 
 
-// Objects
+// Objects ==> varibles point to the address of the object
 var obj1 = {
     name: 'John',
     age: 26
@@ -77,7 +80,7 @@ var obj1 = {
 var obj2 = obj1;
 obj1.age = 30;
 console.log(obj1.age);
-console.log(obj2.age);
+console.log(obj2.age); //both will be 30!!!
 
 // Functions
 var age = 27;
@@ -94,17 +97,16 @@ function change(a, b) {
 change(age, obj);
 
 console.log(age);
-console.log(obj.city);
-*/
-
+console.log(obj.city); //not changing
 
 
 /////////////////////////////
 // Lecture: Passing functions as arguments
-/*
+console.log('\nPassing functions as arguments')
+
 var years = [1990, 1965, 1937, 2005, 1998];
 
-function arrayCalc(arr, fn) {
+function arrayCalc(arr, fn) { //gets and array and a task for each element
     var arrRes = [];
     for (var i = 0; i < arr.length; i++) {
         arrRes.push(fn(arr[i]));
@@ -134,14 +136,14 @@ var fullAges = arrayCalc(ages, isFullAge);
 var rates = arrayCalc(ages, maxHeartRate);
 
 console.log(ages);
+console.log(fullAges);
 console.log(rates);
-*/
-
 
 
 /////////////////////////////
 // Lecture: Functions returning functions
-/*
+console.log('\nFunctions returning functions')
+
 function interviewQuestion(job) {
     if (job === 'designer') {
         return function(name) {
@@ -158,7 +160,7 @@ function interviewQuestion(job) {
     }
 }
 
-var teacherQuestion = interviewQuestion('teacher');
+var teacherQuestion = interviewQuestion('teacher'); //these variables are functions
 var designerQuestion = interviewQuestion('designer');
 
 
@@ -168,21 +170,22 @@ designerQuestion('jane');
 designerQuestion('Mark');
 designerQuestion('Mike');
 
-interviewQuestion('teacher')('Mark');
-*/
-
+interviewQuestion('builder')('Bob'); //going for the random option
 
 
 /////////////////////////////
 // Lecture: IIFE
-/*
-function game() {
-    var score = Math.random() * 10;
-    console.log(score >= 5);
-}
-game();
+console.log('\nIIFE - Invoked Function expressions')
+
+// function game() {
+//     var score = Math.random() * 10;
+//     console.log(score >= 5);
+// }
+// game();
 
 
+// Used for data privacy, so that no one can check
+// variables from console.
 (function () {
     var score = Math.random() * 10;
     console.log(score >= 5);
@@ -195,8 +198,6 @@ game();
     var score = Math.random() * 10;
     console.log(score >= 5 - goodLuck);
 })(5);
-*/
-
 
 
 /////////////////////////////
