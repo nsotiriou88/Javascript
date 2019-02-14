@@ -177,11 +177,11 @@ interviewQuestion('builder')('Bob'); //going for the random option
 // Lecture: IIFE
 console.log('\nIIFE - Invoked Function expressions')
 
-// function game() {
-//     var score = Math.random() * 10;
-//     console.log(score >= 5);
-// }
-// game();
+function game() {
+    var score = Math.random() * 10;
+    console.log(score >= 5);
+}
+game();
 
 
 // Used for data privacy, so that no one can check
@@ -191,7 +191,7 @@ console.log('\nIIFE - Invoked Function expressions')
     console.log(score >= 5);
 })();
 
-//console.log(score);
+// console.log(score);
 
 
 (function (goodLuck) {
@@ -202,7 +202,8 @@ console.log('\nIIFE - Invoked Function expressions')
 
 /////////////////////////////
 // Lecture: Closures
-/*
+console.log('\nClosures')
+
 function retirement(retirementAge) {
     var a = ' years left until retirement.';
     return function(yearOfBirth) {
@@ -234,9 +235,7 @@ function interviewQuestion(job) {
     }
 }
 
-interviewQuestion('teacher')('John');
-*/
-
+interviewQuestion('designer')('John');
 
 
 /////////////////////////////

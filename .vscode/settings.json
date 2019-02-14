@@ -1,0 +1,15 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "connectionTimeout": 15,
+            "database": "metrics_server",
+            "dialect": "PostgreSQL",
+            "name": "Office Wired",
+            "password": "Sp0rtableM3ss13r106",
+            "port": 5432,
+            "server": "192.168.1.150",
+            "username": "metrics_server"
+        }
+    ]
+}
